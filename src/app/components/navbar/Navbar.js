@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import MenuNavbar from "./MenuNavbar";
+import SearchButton from "../search/SearchButton";
 
 const Navbar = () => {
   const [bukaMenu, setBukaMenu] = useState(false);
@@ -41,9 +42,15 @@ const Navbar = () => {
   return (
     <header className="border-b-2 border-blue-500 bg-gray-100 p-4 sticky top-0 left-0 right-0 z-10">
       <div className="max-w-7xl relative mx-auto flex justify-center items-center">
+      <div className="flex items-center">
           <div className="hidden md:block">
             <MenuNavbar pilihMenu={pilihMenu} />
           </div>
+
+          <div className="absolute right-0 hidden md:block">
+            <SearchButton/>
+          </div>
+      </div>
         
         <div className="block md:hidden">
           <div className="flex items-center justify-center gap-6">
