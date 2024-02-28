@@ -1,6 +1,7 @@
 import React from "react";
 
-const HomeContent = () => {
+const HomeContent = ({ data }) => {
+  const { Ucapan, Judul, Deskripsi } = data;
   return (
     <div className="max-w-4xl mx-auto flex flex-col items-center justify-center">
       <div className="p-4">
@@ -13,10 +14,10 @@ const HomeContent = () => {
 
       <div className="text-center">
         <p className="text-3xl font-description">
-          Hi, what&apos;s up everyone, I&apos;m
+         {Ucapan}
         </p>
-        <h1 className="text-5xl font-title">Rizky Putra</h1>
-        <p className="text-xl font-prefix">Front-End Developer</p>
+        <h1 className="text-5xl font-title">{Judul}</h1>
+        <p className="text-xl font-prefix">{Deskripsi}</p>
       </div>
     </div>
   );
