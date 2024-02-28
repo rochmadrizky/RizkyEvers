@@ -9,7 +9,7 @@ const MenuNavbar = ({ pilihMenu }) => {
     <>
       <ul className="flex items-center flex-col md:flex-row md:gap-[18px]">
         <li className="mb-4 md:mb-0 font-prefix text-lg">
-          <Link href="#" onClick={mengaturMenuKlik}>
+          <Link href="/blogs" onClick={mengaturMenuKlik}>
             BLOGS
           </Link>
         </li>
@@ -23,7 +23,7 @@ const MenuNavbar = ({ pilihMenu }) => {
           </Link>
         </li>
         <li className="mb-4 md:mb-0 font-prefix text-lg">
-          <Link href="#" onClick={mengaturMenuKlik}>
+          <Link href="/abouts" onClick={mengaturMenuKlik}>
             ABOUTS
           </Link>
         </li>
