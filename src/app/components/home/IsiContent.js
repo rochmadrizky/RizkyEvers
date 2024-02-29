@@ -12,7 +12,7 @@ const IsiContent = () => {
       icon: <IconCode />,
       judul: "Coding.",
       deskripsi:
-        "Every day I always conduct website display coding experiments, and don't forget to record them on my <a href='/blogs' class='text-blue-500'>Blogs</a> page.",
+        "Every day I always conduct website display coding experiments, and don't forget to record them on my blogs page.",
     },
     {
       icon: <IconCoffee />,
@@ -50,8 +50,7 @@ const IsiContent = () => {
                     <h1 className="font-prefix text-xl">{isi.judul}</h1>
                     <p
                       className="font-description py-2"
-                      dangerouslySetInnerHTML={{ __html: isi.deskripsi }}
-                    ></p>
+                    >{isi.deskripsi}</p>
                   </div>
                 </div>
               </div>

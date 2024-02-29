@@ -1,12 +1,12 @@
 import React from "react";
 
 const HomeContent = ({ data }) => {
-  const { Ucapan, Judul, Deskripsi } = data;
+  const { Ucapan, Judul, Deskripsi, Foto } = data;
   return (
     <div className="max-w-4xl mx-auto flex flex-col items-center justify-center">
       <div className="p-4">
         <img
-          src="/me/thisIsMe.png"
+          src={Foto}
           alt="saya"
           className="rounded-full mx-auto w-36 h-36 mb-3 ring-2 p-0.5 ring-blue-500 bg-gray-300"
         />

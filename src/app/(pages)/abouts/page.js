@@ -1,22 +1,25 @@
 import React from 'react';
+import AboutsContent from '../../components/abouts/AboutsContent';
 
-const page = () => {
+const aboutsPageData = async () => {
+  const version = process.env.VERSION;
+  const token = process.env.TOKEN;
+  const url = `https://api-us.storyblok.com/v2/cdn/stories/about/about-page?version=${version}&token=${token}&cv=1709201484`
+ 
+  let req = await fetch(url, { cache: "no-store" })
+
+  const dataAbouts = await req.json();
+  return dataAbouts.story.content;
+}
+
+const page = async () => {
+  const dataAbouts = await aboutsPageData();
   return (
     <div
         className="h-[484px] flex items-center justify-center"
         style={{ backgroundImage: `url('/background/topography.svg')` }}
       >
-       <div className="max-w-4xl mx-auto flex items-center justify-center">
-          <div className="p-4">
-            <div className="text-center">
-              <h1 className="font-prefix text-2xl">Snippet of introduction</h1>
-              <h1 className="font-prefix text-2xl">about Me.</h1>
-              <p className="font-description text-xl">
-                Let&apos;s get to know each other and be friends.
-              </p>
-            </div>
-          </div>
-          </div>
+       <AboutsContent data={dataAbouts}/>
     </div>
   );
 };
