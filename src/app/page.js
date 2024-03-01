@@ -4,12 +4,17 @@ import IsiContent from "./components/home/IsiContent";
 const homePageData = async () => {
   const version = process.env.VERSION;
   const token = process.env.TOKEN;
-  const url = `https://api-us.storyblok.com/v2/cdn/stories/home/home-page?cv=1709111204&token=${token}&version=${version}`
+  const url = `https://api-us.storyblok.com/v2/cdn/stories/home/home-page?version=${version}&token=${token}&cv=1709293685`
  
   let req = await fetch(url, { cache: "no-store" })
 
   const dataHome = await req.json();
-  return dataHome.story.content;
+  const { Salam, Grid } = dataHome.story.content;
+  return {
+    hero: Salam[0],
+    kolom: Grid[0],
+  }
+  
 }
 
 export default async function Home() {
@@ -21,11 +26,11 @@ export default async function Home() {
         className="h-[484px] flex items-center justify-center"
         style={{ backgroundImage: `url('/background/topography.svg')` }}
       >
-        <HomeContent data={dataHome} />
+        <HomeContent data={dataHome.hero} />
       </div>
 
       <div className="py-12">
-        <IsiContent/>
+        <IsiContent data={dataHome.kolom}/>
       </div>
     </div>
   );
