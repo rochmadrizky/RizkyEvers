@@ -9,16 +9,12 @@ const homePageData = async () => {
   let req = await fetch(url, { cache: "no-store" })
 
   const dataHome = await req.json();
-  const { Salam, Grid } = dataHome.story.content;
-  return {
-    hero: Salam[0],
-    kolom: Grid[0],
-  }
-  
+  return dataHome.story.content;
 }
 
 export default async function Home() {
   const dataHome = await homePageData();
+  console.log('prend', dataHome)
   
   return (
     <div>
@@ -26,11 +22,11 @@ export default async function Home() {
         className="h-[484px] flex items-center justify-center"
         style={{ backgroundImage: `url('/background/topography.svg')` }}
       >
-        <HomeContent data={dataHome.hero} />
+        <HomeContent data={dataHome.Salam[0]} />
       </div>
 
       <div className="py-12">
-        <IsiContent data={dataHome.kolom}/>
+        <IsiContent data={dataHome.Activities[0]}/>
       </div>
     </div>
   );
