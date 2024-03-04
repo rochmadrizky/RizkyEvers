@@ -14,7 +14,6 @@ const homePageData = async () => {
 
 export default async function Home() {
   const dataHome = await homePageData();
-  console.log('prend', dataHome)
   
   return (
     <div>
