@@ -2,8 +2,8 @@ import HomeContent from "./components/home/HomeContent";
 import IsiContent from "./components/home/IsiContent";
 
 const homePageData = async () => {
-  const version = process.env.VERSION;
-  const token = process.env.TOKEN;
+  const version = "publish";
+  const token = "WosQNewr1kQ6mqsQVQOsbQtt";
   const url = `https://api-us.storyblok.com/v2/cdn/stories/home/home-page?version=${version}&token=${token}&cv=1709293685`
  
   let req = await fetch(url, { cache: "no-store" })

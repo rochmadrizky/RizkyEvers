@@ -3,8 +3,8 @@ import BlogsContent from '../../components/blogs/BlogsContent'
 import IsiContent from '../../components/blogs/IsiContent';
 
 const blogsPageData = async () => {
-  const version = process.env.VERSION;
-  const token = process.env.TOKEN;
+  const version = "publish";
+  const token = "WosQNewr1kQ6mqsQVQOsbQtt";
   const url = `https://api-us.storyblok.com/v2/cdn/stories/blogs/blogs-page?version=${version}&token=${token}&cv=1709544590`
  
   let req = await fetch(url, { cache: "no-store" })
