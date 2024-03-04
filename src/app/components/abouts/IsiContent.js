@@ -5,6 +5,7 @@ const IsiContent = ({ data }) => {
     <div className="max-w-7xl mx-auto px-4">
       <h4>{data.Judul}</h4>
       <p>{data.Deskripsi}</p>
+      <p>hai</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {data.Grid.map((e) => (
